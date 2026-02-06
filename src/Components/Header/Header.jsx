@@ -36,7 +36,7 @@ const Header = () => {
           {/* Logo */}
           <div className="logo">
             <a href="/">
-              <img src="/logo.png" alt="Logo" className="logo-image" />
+              <img src="/src/assets/logo.jpg" alt="Logo" className="logo-image" />
               {/* Or use text logo: */}
               {/* <span className="logo-text">YourBrand</span> */}
             </a>
