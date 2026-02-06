@@ -1,13 +1,11 @@
 import React,{useState} from "react";
 import "./Header.css";
+import { Link } from 'react-router-dom'
+
 const NavLink = ({ href, children, onClick }) => (
-  <a
-    href={href}
-    onClick={onClick}
-    className="nav-link"
-  >
+  <Link to={href} onClick={onClick} className="nav-link">
     {children}
-  </a>
+  </Link>
 );
 
 // Main Header component

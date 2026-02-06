@@ -1,0 +1,291 @@
+
+        .about-page {
+          width: 100%;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            border-top: #1a1a1a solid 1px;
+          background: linear-gradient(135deg, #f9fdff 0%, #afb4b6 100%);
+          color: rgb(0, 0, 0);
+          padding: 5rem 0;
+          text-align: center;
+        }
+
+        .page-title {
+          font-size: 3rem;
+          margin: 0 0 1.5rem 0;
+          font-weight: 700;
+        }
+
+        .intro-text {
+          font-size: 1.2rem;
+          line-height: 1.8;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        /* Who We Are Section */
+        .who-we-are-section {
+            border-top: #1a1a1a solid 1px;
+            border-bottom: #1a1a1a solid 1px;
+          padding: 5rem 0;
+          background: linear-gradient(135deg, #f9fdff 0%, #afb4b6 100%);
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+          text-align: center;
+          margin: 0 0 3rem 0;
+          color: #000000;
+          font-weight: 700;
+        }
+
+        .content-box p {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: #000000;
+          margin-bottom: 1.5rem;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision-section {
+            border-bottom: #1a1a1a solid 1px;
+          background: linear-gradient(135deg, #f9fdff 0%, #afb4b6 100%);
+          padding: 5rem 0;
+          /* background: white; */
+        }
+
+        .mission-vision-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          margin-top: 3rem;
+        }
+
+        .mission-box,
+        .vision-box {
+          background: linear-gradient(135deg, #000000 0%, #4f4949 100%);
+          color: rgb(255, 255, 255);
+          padding: 3rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-box h3,
+        .vision-box h3 {
+          font-size: 1.8rem;
+          margin: 0 0 1rem 0;
+          font-weight:bolder;
+        }
+
+        .mission-box p,
+        .vision-box p {
+          font-size: 18px;
+          line-height: 1.7;
+          margin: 0;
+        }
+
+        /* What We Offer Section */
+        .offerings-section {
+          padding: 5rem 0;
+          background: linear-gradient(135deg, #f9fdff 0%, #afb4b6 100%);
+          border-bottom: #1a1a1a solid 1px  ;
+        }
+
+        .offerings-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
+        .offering-card {
+          background: linear-gradient(135deg, #434343 0%, #000000 100%);
+          padding: 2.5rem;
+          border-radius: 12px;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offering-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .offering-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .offering-card h4 {
+          font-size: 1.3rem;
+          margin: 0 0 1rem 0;
+          color: #ffffff;
+          font-weight: 600;
+        }
+
+        .offering-card p {
+          color: #ffffff;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        /* How It Works Section */
+        .how-it-works-section {
+          padding: 5rem 0;
+          border-bottom: #1a1a1a solid 1px;
+          background: linear-gradient(135deg, #f9fdff 0%, #afb4b6 100%);
+        }
+
+        .steps-container {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          position: relative;
+        }
+
+        .step-card {
+          text-align: center;
+          position: relative;
+        }
+
+        .step-number {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, #000000 0%, #000000 100%);
+          color: rgb(255, 255, 255);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin: 0 auto 1.5rem auto;
+        }
+
+        .step-card h4 {
+          font-size: 1.2rem;
+          margin: 0 0 1rem 0;
+          color: #000000;
+        }
+
+        .step-card p {
+          color: #000000;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        .step-arrow {
+          position: absolute;
+          top: 30px;
+          right: -2rem;
+          font-size: 2rem;
+          color: #000000;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-section {
+          padding: 5rem 0;
+          background: linear-gradient(135deg, #f9fdff 0%, #afb4b6 100%);
+        }
+
+        .why-choose-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+
+        .why-choose-item {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 10px;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .check-icon {
+          width: 30px;
+          height: 30px;
+          background: #000000;
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          flex-shrink: 0;
+        }
+
+        .why-choose-item span:last-child {
+          font-size: 1rem;
+          color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+          .page-title {
+            font-size: 2.5rem;
+          }
+
+          .section-title {
+            font-size: 2rem;
+          }
+
+          .mission-vision-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+          }
+
+          .offerings-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .steps-container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+
+          .step-arrow {
+            display: none;
+          }
+
+          .why-choose-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .intro-section {
+            padding: 3rem 0;
+          }
+
+          .page-title {
+            font-size: 2rem;
+          }
+
+          .intro-text {
+            font-size: 1rem;
+          }
+
+          .who-we-are-section,
+          .mission-vision-section,
+          .offerings-section,
+          .how-it-works-section,
+          .why-choose-section {
+            padding: 3rem 0;
+          }
+
+          .mission-box,
+          .vision-box {
+            padding: 2rem;
+          }
+        }
+      
