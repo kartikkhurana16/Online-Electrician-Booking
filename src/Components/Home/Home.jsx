@@ -1,7 +1,9 @@
 import React from 'react'
+import { useAuth } from '../../Utils/AuthContext';
 import "./Home.css"
 
 const Home = () => {
+  const {user}=useAuth();
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -47,9 +49,12 @@ const Home = () => {
             <a href="/booking" className="btn btn-primary">
               Start Booking
             </a>
+          
+            {!user && (
             <a href='/register' className="btn btn-secondary">
               Sign In
             </a>
+          )}
           </div>
         </div>
       </div>
