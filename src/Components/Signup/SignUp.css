@@ -1,0 +1,94 @@
+Full page center
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.login-register-container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 2.2rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Form field wrapper */
+.form-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.1rem;
+}
+
+.form-field-wrapper label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+/* Inputs */
+.form-field-wrapper input {
+  padding: 0.75rem 0.85rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-field-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+.form-field-wrapper input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Submit button */
+.btn {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Bottom text */
+.login-register-container p {
+  margin-top: 1.3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Links */
+.login-register-container a {
+  color: #6366f1;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-register-container a:hover {
+  text-decoration: underline;
+}

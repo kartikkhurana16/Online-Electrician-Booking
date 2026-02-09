@@ -47,7 +47,7 @@ const Home = () => {
             <a href="/booking" className="btn btn-primary">
               Start Booking
             </a>
-            <a href="/signin" className="btn btn-secondary">
+            <a href='/register' className="btn btn-secondary">
               Sign In
             </a>
           </div>

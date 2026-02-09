@@ -1,6 +1,9 @@
 import React,{useState} from "react";
 import "./Header.css";
 import { Link } from 'react-router-dom'
+import { useAuth } from "../../Utils/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 
 const NavLink = ({ href, children, onClick }) => (
   <Link to={href} onClick={onClick} className="nav-link">
@@ -10,6 +13,12 @@ const NavLink = ({ href, children, onClick }) => (
 
 // Main Header component
 const Header = () => {
+  const navigate = useNavigate();
+const {user}=useAuth();
+
+const logoutClick = () => {
+        navigate('/login')
+    }
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Easy configuration - just add more links here!
@@ -40,13 +49,20 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="nav-desktop">
-            {navLinks.map((link, index) => (
-              <NavLink key={index} href={link.href}>
+            <nav className="nav-desktop">
+              {navLinks.map((link, index) => (
+               <NavLink key={index} href={link.href}>
                 {link.label}
               </NavLink>
-            ))}
+             ))}
+            {!user && (
+              <NavLink href="/login"></NavLink>
+              )}
+            {user && (
+              <button className="logout-btn" onClick={logoutClick}>
+                Logout
+              </button>
+            )}
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -66,15 +82,32 @@ const Header = () => {
         {/* Mobile Navigation */}
         <nav className={`nav-mobile ${isMobileMenuOpen ? 'open' : ''}`}>
           {navLinks.map((link, index) => (
-            <NavLink 
-              key={index} 
+            <NavLink
+              key={index}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.label}
             </NavLink>
           ))}
+
+          {!user && (
+            <NavLink href="/login" onClick={() => setIsMobileMenuOpen(false)}></NavLink>
+          )}
+
+          {user && (
+            <button
+              className="logout-btn mobile-logout"
+              onClick={() => {
+                logoutClick();
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              Logout
+            </button>
+          )}
         </nav>
+
       </header>
     </>
   );
