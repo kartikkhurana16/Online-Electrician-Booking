@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useRef} from "react";
 import "./Header.css";
 import { Link } from 'react-router-dom'
 import { useAuth } from "../../Utils/AuthContext";
@@ -14,11 +14,11 @@ const NavLink = ({ href, children, onClick }) => (
 // Main Header component
 const Header = () => {
   const navigate = useNavigate();
-const {user}=useAuth();
+const {user, logoutUser}=useAuth();
 
-const logoutClick = () => {
-        navigate('/login')
-    }
+
+
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Easy configuration - just add more links here!
@@ -59,7 +59,7 @@ const logoutClick = () => {
               <NavLink href="/login"></NavLink>
               )}
             {user && (
-              <button className="logout-btn" onClick={logoutClick}>
+              <button className="logout-btn" onClick={logoutUser}>
                 Logout
               </button>
             )}
@@ -99,7 +99,7 @@ const logoutClick = () => {
             <button
               className="logout-btn mobile-logout"
               onClick={() => {
-                logoutClick();
+                logoutUser();
                 setIsMobileMenuOpen(false);
               }}
             >

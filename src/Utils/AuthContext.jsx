@@ -1,4 +1,6 @@
 import {createContext,useContext,useEffect,useState} from 'react';
+import { account } from '../appwriteConfig';
+
 
 const AuthContext=createContext();
 
@@ -7,12 +9,47 @@ export const AuthProvider=({children})=>{
     const [user,setUser]=useState(false);
 
     useEffect(()=>{
-        setLoading(false);
+        checkUser()
     },[]);
 
-    const loginUser=()=>{}
-    const logoutUser=()=>{}
-    const registerUser=()=>{}
+    const loginUser=async(userInfo)=>{
+        setLoading(true)
+        try {
+            let response =await account.createEmailPasswordSession(
+                userInfo.email,
+                userInfo.password
+            )
+            let accountDetails=await account.get()
+            console.log("session",response);
+            setUser(accountDetails)
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
+        setLoading(false);
+    }
+    const logoutUser=async()=>{
+        setLoading(true)
+        try {
+            await account.deleteSession('current')
+            setUser(null)
+        } catch (error) {
+            console.log(error);
+        }
+        setLoading(false)
+    }
+    const registerUser=(userInfo)=>{}
+    const checkUser=async()=>{
+        try {
+            let accountDetails=await account.get();
+            setUser(accountDetails)
+        } catch (error) {
+            console.log(error);
+        }
+        setLoading(false);
+    }
+
     const contextdata={
         user,
         loginUser,
