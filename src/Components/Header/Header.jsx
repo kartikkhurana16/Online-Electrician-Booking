@@ -15,13 +15,9 @@ const NavLink = ({ href, children, onClick }) => (
 const Header = () => {
   const navigate = useNavigate();
 const {user, logoutUser}=useAuth();
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-
-
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Easy configuration - just add more links here!
+// Easy configuration - just add more links here!
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Booking', href: '/booking' },
