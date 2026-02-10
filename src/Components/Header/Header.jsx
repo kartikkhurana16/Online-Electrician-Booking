@@ -21,8 +21,10 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Booking', href: '/booking' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Dashboard', href: '/uDashboard' },
     { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
+
     // Add more links easily:
     // { label: 'Services', href: '/services' },
     // { label: 'Gallery', href: '/gallery' },

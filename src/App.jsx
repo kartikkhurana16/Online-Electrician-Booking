@@ -9,6 +9,7 @@ import Register from './Components/Signup/SignUp'
 import Login from './Components/Login/Login'
 import PrivateRoutes from './Utils/PrivateRoutes'
 import { AuthProvider } from './Utils/AuthContext'
+import UDashboard from './Components/UserDashBoard/UDashboard'
 import './App.css'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route element={<PrivateRoutes/>}>
           <Route path="/about" element={<About/>} />
           <Route path="/booking" element={<BookingForm/>} />
+          <Route path='/uDashboard' element={<UDashboard/>} />
         </Route>
         {/* Add more routes as needed */}
       </Routes>

@@ -1,0 +1,172 @@
+.dashboard-page {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Main container */
+.dashboard-card {
+  border: 4px solid #000;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Profile section */
+.profile-section {
+  flex-shrink: 0;
+}
+
+.profile-circle {
+  width: 220px;
+  height: 220px;
+  border: 4px solid #000;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Info section */
+.info-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.info-box {
+  border: 4px solid #000;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 200px;
+  text-align: center;
+}
+.info-box-btn{
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border: 4px solid #000;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 200px;
+  cursor: pointer;
+  text-align: center;
+}
+.info-box-btn:hover{
+    border: 5px solid #000;
+  padding: 13px 24px;
+}
+
+.password-box {
+  min-width: 230px;
+}
+.password-box {
+  cursor: pointer;
+}
+
+.password-box:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Password form */
+.password-form {
+  margin-top: 30px;
+  max-width: 400px;
+  border: 3px solid #000;
+  padding: 20px;
+}
+
+.password-form input {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  margin-bottom: 12px;
+  border: 2px solid #000;
+  font-size: 15px;
+}
+
+.password-form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.password-form button:hover {
+  opacity: 0.9;
+}
+
+
+/* ========================= */
+/* 📱 Mobile Responsive CSS */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .dashboard-page {
+    padding: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .dashboard-card {
+    flex-direction: column;
+    gap: 30px;
+    padding: 25px;
+  }
+
+  .profile-circle {
+    width: 160px;
+    height: 160px;
+  }
+
+  .info-section {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .info-box {
+    width: 100%;
+    min-width: unset;
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+
+/* 📱 Extra small devices */
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 22px;
+  }
+
+  .profile-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .info-box {
+    font-size: 15px;
+  }
+}
