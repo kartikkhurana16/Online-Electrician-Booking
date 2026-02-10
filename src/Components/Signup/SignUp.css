@@ -10,12 +10,14 @@ Full page center
 
 /* Card */
 .login-register-container {
+ margin: 10rem 0 10rem 25%;
   width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  padding: 2.2rem;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  max-width: 400px;
+  background: #9b9494;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Form field wrapper */

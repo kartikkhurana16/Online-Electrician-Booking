@@ -1,5 +1,5 @@
 .header {
-  background: #ffffff;
+  background-color:transparent;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -48,7 +48,7 @@
 }
 
 .nav-link:hover {
-  background: #f0f0f0;
+  background: #a9a1a1;
   color: #007bff;
 }
 
@@ -85,7 +85,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+.nav-link{
+  font-weight: 500;
+  font-size:large;
+}
 .logout-btn:hover {
   background: #dc2626;
   color: #ffffff;
@@ -123,7 +126,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: #f9f9f9;
+  background: #ffffff;
 }
 
 .nav-mobile.open {

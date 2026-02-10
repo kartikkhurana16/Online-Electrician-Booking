@@ -47,7 +47,7 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
             <nav className="nav-desktop">
               {navLinks.map((link, index) => (
-               <NavLink key={index} href={link.href}>
+               <NavLink className="nav-link" key={index} href={link.href}>
                 {link.label}
               </NavLink>
              ))}

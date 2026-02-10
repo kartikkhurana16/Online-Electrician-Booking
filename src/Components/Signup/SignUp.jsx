@@ -34,6 +34,7 @@ const Register = () => {
   return (
     <div className="container">
       <div className="login-register-container">
+        <label className='label'>Sign Up</label>
         <form ref={registerForm} onSubmit={handleSubmit}>
 
           <div className="form-field-wrapper">

@@ -32,7 +32,7 @@ const handleSubmit=(e)=>{
     <div className="container">
         <div className="login-register-container">
           <form ref={loginForm} onSubmit={handleSubmit}>
-
+          <label className='label'>Login</label>
             <div className="form-field-wrapper">
                 <label>Email:</label>
                 <input 

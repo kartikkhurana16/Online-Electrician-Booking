@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {ID} from 'appwrite'
+import { account,databases } from '../../appwriteConfig';
 import { useForm } from 'react-hook-form';
 import Input from '../Input/Input'; 
 import "./Booking.css";
@@ -17,17 +19,33 @@ const BookingForm = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Form Data:', data);
-      
-      // Success alert
-      alert(`✅ Booking Confirmed!\n\nThank you ${data.firstName} ${data.lastName}!\n\nYour booking for ${data.workType} on ${data.date} at ${data.time} has been confirmed.\n\nWe'll contact you at ${data.phone} or ${data.email} soon.`);
-      
-      // Reset form
+    try {
+      const user=await account.get()
+      await databases.createDocument(
+        "698b5260003a2be6b4a6",
+        "698b52fd000a50d7d8ed",
+        ID.unique(),
+        {
+        Name : `${data.firstName} ${data.lastName}`,
+        PhoneNumber: data.phone,
+        Email: data.email,
+        WorkType: data.workType,
+        HouseNumber: data.houseNo,
+        Area: data.area,
+        FullAddress: data.address,
+        Pincode: Number(data.pincode),
+        DateBooking: new Date(data.date).toISOString(),
+        TimeSlot: data.time
+      }
+      )
+      alert("booking Confirm")
       reset();
-      setIsSubmitting(false);
-    }, 1000);
+    } catch (error) {
+      console.log(error);
+      alert(" Booking failed. Please try again.");
+    } finally{
+      setIsSubmitting(false)
+    }
   };
 
   // Handle form errors
