@@ -8,10 +8,13 @@ const AuthContext=createContext();
 export const AuthProvider=({children})=>{
     const [loading,setLoading]=useState(true);
     const [user,setUser]=useState(false);
+    const [admin,setAdmin]=useState(false);
 
     useEffect(()=>{
+        checkAdmin()
         checkUser()
     },[]);
+
 
     const loginUser=async(userInfo)=>{
         setLoading(true)
@@ -66,9 +69,25 @@ export const AuthProvider=({children})=>{
         }
         setLoading(false);
     }
+    const checkAdmin=async()=>{
+        try {
+            let accountDetails=await account.get();
+          if(accountDetails.email==="yasir@gmail.com")
+          {
+            setAdmin(true);
+          }
+          else{
+            setAdmin(false)
+          }
+        } catch (error) {
+            console.log("admin",error);
+            
+        }
+    }
 
     const contextdata={
         user,
+        admin,
         loginUser,
         logoutUser,
         registerUser

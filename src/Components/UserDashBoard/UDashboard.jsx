@@ -4,7 +4,7 @@ import { account } from "../../appwriteConfig";
 import "./UDashboard.css";
 
 const UDashboard = () => {
-  const [bookings, setBookings] = useState([]);
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const [showPasswordForm, setShowPasswordForm] = useState(false);
@@ -16,8 +16,12 @@ const UDashboard = () => {
   useEffect(() => {
     const loadBooking = async () => {
       try {
-        const data = await fetchBooking();
-        setBookings(data);
+        const data = await account.get();
+        console.log(data);
+        
+        setUser(data)
+        const bookingData= await fetchBooking();
+        setBookings(bookingData);
       } catch (error) {
         console.error(error);
       } finally {
@@ -63,10 +67,10 @@ const UDashboard = () => {
           </div>
         </div>
 
-        {bookings.map((booking) => (
-          <div className="info-section" key={booking.$id}>
-            <div className="info-box">{booking.Name}</div>
-            <div className="info-box">{booking.Email}</div>
+        {user && (
+          <div className="info-section">
+            <div className="info-box">{user.name}</div>
+            <div className="info-box">{user.email}</div>
 
             <button
               className="info-box-btn"
@@ -105,7 +109,7 @@ const UDashboard = () => {
               </form>
             )}
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

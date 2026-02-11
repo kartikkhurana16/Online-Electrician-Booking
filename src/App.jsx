@@ -11,6 +11,7 @@ import PrivateRoutes from './Utils/PrivateRoutes'
 import { AuthProvider } from './Utils/AuthContext'
 import UDashboard from './Components/UserDashBoard/UDashboard'
 import './App.css'
+import AdminDash from './Components/AdminDash/AdminDash'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/booking" element={<BookingForm/>} />
           <Route path='/uDashboard' element={<UDashboard/>} />
+          <Route path='/adminDashboard' element={<AdminDash/>} />
         </Route>
         {/* Add more routes as needed */}
       </Routes>

@@ -14,21 +14,18 @@ const NavLink = ({ href, children, onClick }) => (
 // Main Header component
 const Header = () => {
   const navigate = useNavigate();
-const {user, logoutUser}=useAuth();
+const {user,admin, logoutUser}=useAuth();
 const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-// Easy configuration - just add more links here!
+
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Booking', href: '/booking' },
-    { label: 'Dashboard', href: '/uDashboard' },
+    user && { label: 'Dashboard', href: '/uDashboard' },
+    admin && { label: 'Admin DashBoard', href: '/adminDashboard' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
-
-    // Add more links easily:
-    // { label: 'Services', href: '/services' },
-    // { label: 'Gallery', href: '/gallery' },
-  ];
+  ].filter(Boolean);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -42,9 +39,7 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
           <div className="logo">
             <a href="/">
               <img src="/src/assets/logo.jpg" alt="Logo" className="logo-image" />
-              {/* Or use text logo: */}
-              {/* <span className="logo-text">YourBrand</span> */}
-            </a>
+             </a>
           </div>
 
             <nav className="nav-desktop">
@@ -61,9 +56,10 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
                 Logout
               </button>
             )}
+           
           </nav>
 
-          {/* Mobile Menu Toggle */}
+           {/* Mobile Menu Toggle  */}
           <button 
             className="mobile-menu-toggle"
             onClick={toggleMobileMenu}
@@ -92,7 +88,7 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
           {!user && (
             <NavLink href="/login" onClick={() => setIsMobileMenuOpen(false)}></NavLink>
           )}
-
+          
           {user && (
             <button
               className="logout-btn mobile-logout"
