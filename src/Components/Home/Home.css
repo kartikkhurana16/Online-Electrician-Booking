@@ -82,6 +82,7 @@
         }
 
         .btn {
+          background-color: rgb(21, 233, 21);
           padding: 1rem 2rem;
           border-radius: 8px;
           font-size: 1rem;
@@ -94,29 +95,8 @@
           text-align: center;
         }
 
-        .btn-primary {
-          background: linear-gradient(135deg, #10b92f 0%, #053919 100%);
-          color: white;
-          box-shadow: 0 4px 15px rgba(30, 255, 0, 0.4);
-        }
 
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(9, 255, 0, 0.6);
-        }
-
-        .btn-secondary {
-          background: white;
-          color: #000000;
-          border: 2px solid #000000;
-        }
-
-        .btn-secondary:hover {
-          background: #000000;
-          color: white;
-          transform: translateY(-2px);
-        }
-
+  
         /* Responsive Design */
         @media (max-width: 968px) {
           .hero-container {

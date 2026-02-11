@@ -14,6 +14,8 @@ const AdminDash = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [selectedBooking, setSelectedBooking] = useState(null);
+
 
   useEffect(() => {
     const loadBooking = async () => {
@@ -80,6 +82,12 @@ const completed = async (id) => {
     console.error("Database update error:", error);
   }
 };
+
+
+const viewBookingDetails = (booking) => {
+  setSelectedBooking(booking);
+};
+
 
 
 
@@ -166,6 +174,7 @@ const completed = async (id) => {
                     </div>
 
                     {/* Table Header */}
+                  <div>
                     <div className="table-row header">
                         <div className="col name">Name, Email</div>
                         <div className="col">Service Type</div>
@@ -204,15 +213,44 @@ const completed = async (id) => {
                         </div>
 
                         <div className="col view">
-                            <button className="view-button">View</button>
+                            <button
+                            className="view-button"
+                            onClick={() => viewBookingDetails(booking)}
+                          >
+                            View
+                          </button>
+
                         </div>
                         </div>
                     ))}
                     </div>
-            
-    </div>
+                    {selectedBooking && (
+                      <div className="view-outer-box">
+                        <div className="view-inner-box">
+                          <div className="view-details">
 
+                            <h3>Booking Details</h3>
+
+                            <p><strong>Name:</strong> {selectedBooking.Name}</p>
+                            <p><strong>Email:</strong> {selectedBooking.Email}</p>
+                            <p><strong>Work Type:</strong> {selectedBooking.WorkType}</p>
+                            <p><strong>Status:</strong> {selectedBooking.Status}</p>
+                            <p><strong>Date:</strong> {new Date(selectedBooking.DateBooking).toLocaleDateString()}</p>
+                            <p><strong>Time Slot:</strong> {selectedBooking.TimeSlot}</p>
+
+                            <button onClick={() => setSelectedBooking(null)}>
+                              Close
+                            </button>
+
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    </div>
+    </div>
+  
   );
 };
+
 
 export default AdminDash;

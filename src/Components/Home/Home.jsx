@@ -46,12 +46,12 @@ const Home = () => {
 
           {/* Action Buttons */}
           <div className="hero-buttons">
-            <a href="/booking" className="btn btn-primary">
+            <a href="/booking" className="btn">
               Start Booking
             </a>
           
             {!user && (
-            <a href='/register' className="btn btn-secondary">
+            <a href='/register' className="btn">
               Sign In
             </a>
           )}

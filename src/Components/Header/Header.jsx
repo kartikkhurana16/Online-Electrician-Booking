@@ -21,8 +21,11 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'Booking', href: '/booking' },
-    user && { label: 'Dashboard', href: '/uDashboard' },
-    admin && { label: 'Admin DashBoard', href: '/adminDashboard' },
+   user &&
+      (admin
+        ? { label: 'Admin Dashboard', href: '/adminDashboard' }
+        : { label: 'Dashboard', href: '/uDashboard' }
+      ),
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ].filter(Boolean);
