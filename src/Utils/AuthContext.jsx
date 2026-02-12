@@ -72,7 +72,7 @@ export const AuthProvider=({children})=>{
     const checkAdmin=async()=>{
         try {
             let accountDetails=await account.get();
-          if(accountDetails.email==="yasir@gmail.com")
+          if(accountDetails.email==="kartikkhurana@gmail.com")
           {
             setAdmin(true);
           }
