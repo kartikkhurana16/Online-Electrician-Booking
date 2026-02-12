@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect,useRef } from 'react'
-import'./Signup.css'
+import'./SignUp.css'
 import { useAuth } from '../../Utils/AuthContext'
 import { Link ,useNavigate} from 'react-router-dom'
 
