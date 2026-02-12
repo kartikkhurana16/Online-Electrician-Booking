@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuth } from '../../Utils/AuthContext';
+import photologo from "../../assets/elect.jpg";
 import "./Home.css"
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
       <div className="hero-container">
         {/* Left Side - Image */}
         
-          <img src="/src/assets/elect.jpg"
+          <img src={photologo}
             alt="Booking illustration" 
             className="main-image"
           />

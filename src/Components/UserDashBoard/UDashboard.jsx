@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchBooking } from "../../fetch";
 import { account } from "../../appwriteConfig";
+import profile from "../../assets/profile.png"
 import "./UDashboard.css";
 
 const UDashboard = () => {
@@ -63,7 +64,7 @@ const UDashboard = () => {
       <div className="dashboard-card">
         <div className="profile-section">
           <div className="profile-circle">
-            <img src="/src/assets/profile.png"  />
+            <img src={profile}  />
           </div>
         </div>
 

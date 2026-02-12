@@ -3,6 +3,7 @@ import "./Header.css";
 import { Link } from 'react-router-dom'
 import { useAuth } from "../../Utils/AuthContext";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.jpg"
 
 
 const NavLink = ({ href, children, onClick }) => (
@@ -41,7 +42,7 @@ const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
           {/* Logo */}
           <div className="logo">
             <a href="/">
-              <img src="/src/assets/logo.jpg" alt="Logo" className="logo-image" />
+              <img src={logo} alt="Logo" className="logo-image" />
              </a>
           </div>
 

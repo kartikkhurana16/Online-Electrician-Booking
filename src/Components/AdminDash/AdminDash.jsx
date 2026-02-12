@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { account } from "../../appwriteConfig";
 import { fetchBooking } from "../../fetch";
 import { databases } from "../../appwriteConfig";
+import profile from "../../assets/profile.png";
 import "./AdminDash.css";
 
 const AdminDash = () => {
@@ -98,7 +99,7 @@ const viewBookingDetails = (booking) => {
       <div className="dashboard-card">
         <div className="profile-section">
           <div className="profile-circle">
-            <img src="/src/assets/profile.png"  />
+            <img src={profile} />
           </div>
         </div>
 
