@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: "0.0.0.0",
-    allowedHosts: true
+    allowedHosts: true,
+    base:process.env.VITE_BASE_PATH || "Online-Electrician-Booking"
   }
 });
