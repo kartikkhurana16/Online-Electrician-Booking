@@ -8,6 +8,6 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     allowedHosts: true,
-    base:process.env.VITE_BASE_PATH || "Online-Electrician-Booking"
+    base:process.env.VITE_BASE_PATH || "/Online-Electrician-Booking"
   }
 });
