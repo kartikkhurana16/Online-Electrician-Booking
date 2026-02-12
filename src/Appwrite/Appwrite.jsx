@@ -4,8 +4,8 @@ const Booking = async(formData)=>{
     const user=await account.get();
 
     await databases.createDocument(
-        "698b5260003a2be6b4a6",
-        "698b52fd000a50d7d8ed",
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION_ID,
         ID.unique(),
         {
             Name: formData.name,
